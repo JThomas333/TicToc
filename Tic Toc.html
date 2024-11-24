@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Tic Toc.js"></script>
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+        }
+        .container {
+            text-align: center;
+        }
+        .grid {
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            padding: 5px;
+            position: relative;
+            top: -50px;
+            background-color: white;
+            
+        }
+        .grid div {
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+        }
+        ul {
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: white;
+        }
+
+        button:hover {
+            background-color: #1c4423;
+            color: white;
+        }
+        .player{
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 150px;
+        }
+       .helyzet{
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-align: center;
+            position: relative;
+            top: -30px;
+            background-color: white;
+            border: 2px solid black;
+       }
+       
+    </style>
+</head>
+<body>
+    <ul>
+        <li><button onclick="TicTac('1')" class="player">1 játékos</button></li>
+        <li><button onclick="TicTac('2')" class="player">2 játékos</button></li>
+    </ul>
+    
+    <div class="container">
+        <div class="grid" id="XO">
+            <div class="ertek" id="1"></div>
+            <div class="ertek" id="2"></div>
+            <div class="ertek" id="3"></div>
+            <div class="ertek" id="4"></div>
+            <div class="ertek" id="5"></div>
+            <div class="ertek" id="6"></div>
+            <div class="ertek" id="7"></div>
+            <div class="ertek" id="8"></div>
+            <div class="ertek" id="9"></div>           
+        </div>
+        <div class="helyzet" id="helyzet"></div>
+        <button onclick="Restart()" >Új mecss</button>
+    </div>
+
+</body>
+<script> 
+    const divek = document.querySelectorAll(".ertek");
+        divek.forEach(div => {
+            div.addEventListener("click", TicTac);
+        });
+</script>
+</html>
