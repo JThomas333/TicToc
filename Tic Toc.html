@@ -53,17 +53,18 @@
             padding: 10px 20px;
             font-size: 16px;
             background-color: white;
+            border-radius: 5px;
         }
 
         button:hover {
-            background-color: #1c4423;
+            background-color: #168029;
             color: white;
         }
         .player{
             justify-content: center;
             align-items: center;
             position: relative;
-            top: 150px;
+            top: 50px;
         }
        .helyzet{
             margin-bottom: 20px;
@@ -79,8 +80,8 @@
 </head>
 <body>
     <ul>
-        <li><button onclick="TicTac('1')" class="player">1 játékos</button></li>
-        <li><button onclick="TicTac('2')" class="player">2 játékos</button></li>
+        <li><button onclick="jatekmode(1)" class="player" id="mode1">1 játékos</button></li>
+        <li><button onclick="jatekmode(2)" class="player" id="mode2">2 játékos</button></li>
     </ul>
     
     <div class="container">
@@ -95,7 +96,7 @@
             <div class="ertek" id="8"></div>
             <div class="ertek" id="9"></div>           
         </div>
-        <div class="helyzet" id="helyzet"></div>
+        <div class="helyzet" id="helyzet">Válassz modot!</div>
         <button onclick="Restart()" >Új mecss</button>
     </div>
 
@@ -103,7 +104,7 @@
 <script> 
     const divek = document.querySelectorAll(".ertek");
         divek.forEach(div => {
-            div.addEventListener("click", TicTac);
+            div.addEventListener("click", TicTac);//érzék
         });
 </script>
 </html>
